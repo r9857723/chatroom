@@ -59,3 +59,42 @@ func (T *Transfer) WritePkg(data []byte) (err error) {
 	}
 	return
 }
+
+/*
+
+	var responseMessage common.Message
+	responseMessage.Type = common.LoginDataResponseType
+	data, err := json.Marshal(loginDataResponse)
+	if err != nil {
+		return errors.New("json.Marshal(loginDataResponse) fail	err = " + err.Error())
+	}
+	responseMessage.Data = string(data)
+	data, err = json.Marshal(responseMessage)
+	if err != nil {
+		return errors.New("json.Marshal(responseMessage) fail err = " + err.Error())
+	}
+	err = transfer.WritePkg(data)
+	if err != nil {
+		return errors.New("transfer.WritePkg(data) fail err = " + err.Error())
+	}
+
+
+	var message common.Message
+	message.Type = common.LoginDataType
+	var loginData common.LoginData
+	loginData.UserName = userName
+
+	data, err := json.Marshal(loginData)
+	if err != nil {
+		return errors.New("json.Marshal(loginData) fail err = " + err.Error())
+	}
+	message.Data = string(data)
+	data, err = json.Marshal(message)
+	if err != nil {
+		return errors.New("json.Marshal(message) fail err = " + err.Error())
+	}
+	err = transfer.WritePkg(data)
+	if err != nil {
+		return errors.New("transfer.WritePkg(data) fail err = " + err.Error())
+	}
+*/
